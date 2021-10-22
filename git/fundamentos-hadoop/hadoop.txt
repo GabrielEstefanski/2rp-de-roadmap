@@ -1,0 +1,11 @@
+Hadoop é um sistema de arquivos estruturados em blocos onde cada arquivo é dividido em blocos de um tamanho
+pré-determinado. A Arquitetura Apache Hadoop segue uma arquitetura Master/Slave, onde um cluster é composto
+por um único NameNode (nó mestre) e todos os outros são DataNodes (nós escravos). O Hadoop pode ser implementado 
+em um amplo espectro de máquinas que suportam Java. Apesar de ser possível executar vários DataNodes em uma única máquina,
+no mundo prático, esses DataNodes estão espalhados por várias máquinas.
+Sobre a leitura e gravação que são realizadas no HDFS que segue no modelo Write Once - Read Many Philosophy. Dessa forma, você não pode
+editar arquivos que já estiverem armazenados no HDFS, mas pode anexar novos dados.
+Antes de escrever novos blocos, os usuários devem confirmar se os DataNodes, que estão presentes em cada uma das listas de IPs,
+estão prontos para receber os dados ou não. Ao fazê-lo, o cliente cria uma Pipeline para um dos blocos conectando os DataNodes individuais
+na respectiva lista para esse bloco.
+
